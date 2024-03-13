@@ -9,7 +9,7 @@ for (let i = 0; i < images.length; i++) {
   // create html strings
   newUlElems += (`
     <li class="list-group-item"> 
-      <img src="${images[i].src}" alt="${images[i].alt}" />
+      <img class="image-from-library" src="${images[i].src}" alt="${images[i].alt}" />
     </li>
     `)
 };

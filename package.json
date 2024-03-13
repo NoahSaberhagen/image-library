@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "styles:build": "sass ./src/scss/styles.scss ./dist/styles/styles.css",
-    "styles:watch": "sass --watch ./src/scss/styles.scss ./dist/styles/styles.css"
+    "build": "grunt concat && grunt sass"
   },
   "keywords": [],
   "author": "",

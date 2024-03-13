@@ -1,6 +1,33 @@
 $primary-color: #F50162;
 
-img {
-  width: 10vw;
-  height: 10vw;
+$grid-columns: 4;
+$gap: 2.5vw;
+$square-dimensions: 22vw;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.list-group {
+  display: grid;
+  grid-template-columns: repeat($grid-columns, 1fr);
+  gap: $gap;
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+}
+
+.list-group-item {
+  border: none;
+  padding: 0;
+}
+
+.image-from-library {
+  width: $square-dimensions;
+  height: $square-dimensions;
+  object-fit: cover;
+}
+
+
+
