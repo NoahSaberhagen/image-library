@@ -10,10 +10,13 @@ for (let i = 0; i < images.length; i++) {
     console.error('invalid image data')
   }
 
+  // span is for accessibility
   gridInnerHtml += `
-    <input type="checkbox" class="btn-check" id="btncheck${i}" autocomplete="off">
-    <label class="btn" for="btncheck${i}" id="image${i}"></label>
-    <span class="visually-hidden">${images[i].alt}</span>
+    <div id="container${i}">
+      <input type="checkbox" class="btn-check" id="btncheck${i}" autocomplete="off">
+      <label class="btn" for="btncheck${i}" id="image${i}"></label>
+      <span class="visually-hidden">${images[i].alt}</span>
+    </div>
   `
 }
 grid.innerHTML = gridInnerHtml;
