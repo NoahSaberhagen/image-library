@@ -1,8 +1,5 @@
 $primary-color: #F50162;
-
-$grid-columns: 4;
-$gap: 2.5vw;
-$square-dimensions: 20vw;
+$square-dimensions: 22vw;
 
 #grid {
   display: grid;
@@ -15,15 +12,30 @@ $square-dimensions: 20vw;
 
 *[id^="image"] {
   background-image: url('https://acre-image-collections.s3.amazonaws.com/image-6578722caea701702392364_medium.jpg'); 
-  background-size:cover;
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
   width: $square-dimensions; 
   height: $square-dimensions;
 }
 
 *[id^="container"] {
+  position: relative;
+  height: $square-dimensions;
+  width: $square-dimensions;
   margin: 1vw;
 }
 
+.MuiSvgIcon-root {
+  height: 3.5vw;
+  width: 3.5vw;
+  position: absolute;
+  top: .5vw;
+  left: .5vw;
+  fill: #F50162;
+}
+
 input[type="checkbox"]:checked + *[id^="image"] {
-  outline: 3px solid $primary-color;
+  outline: 4px solid $primary-color;
+  border-radius: 1px;
 }
