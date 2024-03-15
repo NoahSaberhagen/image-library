@@ -1,19 +1,27 @@
-let newUlElems = '';
+
+// Append new image components, then once they are in HTML set each component style
+// to provide background images.
+const grid = document.querySelector('#grid');
+let gridInnerHtml = '';
 
 for (let i = 0; i < images.length; i++) {
-  // some validation would be a good idea if we were using an API
+
   if (!images[i].src || !images[i].alt) {
-    throw new Error('invalid image')
+    console.error('invalid image data')
   }
 
-  // create html strings
-  newUlElems += (`
-    <li class="list-group-item"> 
-      <img class="image-from-library" src="${images[i].src}" alt="${images[i].alt}" />
-    </li>
-    `)
-};
+  gridInnerHtml += `
+    <input type="checkbox" class="btn-check" id="btncheck${i}" autocomplete="off">
+    <label class="btn" for="btncheck${i}" id="image${i}"></label>
+    <span class="visually-hidden">${images[i].alt}</span>
+  `
+}
+grid.innerHTML = gridInnerHtml;
 
-const listGroupElem = document.querySelector('.list-group');
+for (let i = 0; i < images.length; i++) {
+  const currentImage = document.querySelector(`#image${i}`);
 
-listGroupElem.innerHTML = newUlElems;
+  currentImage.setAttribute("style", `
+    background-image: url('${images[i].src}');
+  `)
+}
